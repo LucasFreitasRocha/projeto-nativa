@@ -2,6 +2,7 @@ package com.nativa.dto.in;
 
 import com.nativa.annotation.EmailValidation;
 import org.hibernate.validator.constraints.Length;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -43,5 +44,8 @@ public class UserDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    public UsernamePasswordAuthenticationToken converter() {
+        return new UsernamePasswordAuthenticationToken(email, password);
     }
 }
