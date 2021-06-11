@@ -25,14 +25,17 @@ import java.util.Objects;
 
 @RestController
 @RequestMapping("/user")
-public class ResourceUsuario {
+public class UsuarioResource {
     @Autowired private UsuarioService service;
     @Autowired private AuthenticationManager authManager;
     @Autowired private TokenService tokenService;
 
 
     @GetMapping
-    public ResponseEntity<?> index(@RequestParam(required = false) String email, @RequestParam(required = false) String name,   Pageable paginacao){
+    public ResponseEntity<?> index
+            (@RequestParam(required = false) String email,
+             @RequestParam(required = false) String name,
+             Pageable paginacao){
        if( Objects.isNull(email) &&  Objects.isNull(name)){
            return ResponseEntity.ok(service.index(paginacao));
        }else if(!Objects.isNull(email)){
