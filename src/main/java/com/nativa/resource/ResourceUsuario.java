@@ -1,6 +1,7 @@
 package com.nativa.resource;
 
 import com.nativa.dto.in.CadastroDTO;
+import com.nativa.dto.in.SenhaDTO;
 import com.nativa.dto.out.TokenDto;
 import com.nativa.dto.out.UsuarioDTO;
 import com.nativa.model.Usuario;
@@ -28,6 +29,8 @@ public class ResourceUsuario {
     @Autowired private UsuarioService service;
     @Autowired private AuthenticationManager authManager;
     @Autowired private TokenService tokenService;
+
+
     @GetMapping
     public ResponseEntity<?> index(@RequestParam(required = false) String email, @RequestParam(required = false) String name,   Pageable paginacao){
        if( Objects.isNull(email) &&  Objects.isNull(name)){
@@ -54,4 +57,27 @@ public class ResourceUsuario {
         }
 
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<UsuarioDTO> showUser(@PathVariable String id) {
+        return ResponseEntity.ok(service.show(id));
+    }
+    @PutMapping("/{id}")
+    public  ResponseEntity<Void> updateUser(@PathVariable String id, @RequestBody CadastroDTO cadastroDTO){
+        service.updateUser(id, cadastroDTO);
+        return  ResponseEntity.noContent().build();
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable String id){
+        service.deleteUser(id);
+        return  ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping("/alterar-senha")
+    public ResponseEntity<Void>
+    alterarSenha(@Valid @RequestBody SenhaDTO senhaDTO,@RequestHeader("Authorization") String token )
+    {
+        service.alterarSenha(token,senhaDTO);
+        return  ResponseEntity.noContent().build();
+    }
+
 }

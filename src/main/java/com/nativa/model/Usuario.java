@@ -29,6 +29,10 @@ public class Usuario extends EntityModel implements UserDetails {
         this.name = cadastroDTO.getName();
         this.password = Generate.hashPassword(cadastroDTO.getPassword());
     }
+    public void update(CadastroDTO cadastroDTO) {
+        this.email = cadastroDTO.getEmail();
+        this.name = cadastroDTO.getName();
+    }
 
     @Override
     public void setId(String id) {
@@ -58,6 +62,14 @@ public class Usuario extends EntityModel implements UserDetails {
     public String getPassword() {
         // TODO Auto-generated method stub
         return this.password;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = Generate.hashPassword(password);
     }
 
     @Override
@@ -91,4 +103,6 @@ public class Usuario extends EntityModel implements UserDetails {
         // TODO Auto-generated method stub
         return true;
     }
+
+
 }
