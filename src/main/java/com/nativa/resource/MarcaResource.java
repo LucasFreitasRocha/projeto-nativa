@@ -19,15 +19,10 @@ public class MarcaResource {
     @Autowired private MarcaService service;
 
     @GetMapping
-    public ResponseEntity<?> index
-            (@RequestParam(required = false) String name,
-             Pageable paginacao)
+    public ResponseEntity<?> index(@RequestParam(required = false) String name, Pageable paginacao)
     {
-        if(Objects.isNull(name)){
-            return ResponseEntity.ok(service.index(paginacao));
-        }else{
-            return ResponseEntity.ok(service.findByName(name));
-        }
+        return (Objects.isNull(name))? ResponseEntity.ok(service.index(paginacao)):
+             ResponseEntity.ok(service.findByName(name));
     }
 
     @PostMapping
