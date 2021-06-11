@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -20,7 +21,7 @@ public class ResourceUsuario {
     }
 
     @PostMapping
-    public ResponseEntity<Void> createUser(@RequestBody UserDTO userDTO){
+    public ResponseEntity<Void> createUsuario(@Valid @RequestBody UserDTO userDTO){
         Usuario usuario = service.createUser(userDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(usuario.getId()).toUri();
         return ResponseEntity.created(uri).build();
