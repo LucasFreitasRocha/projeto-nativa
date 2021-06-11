@@ -6,6 +6,7 @@ import com.nativa.utils.Generate;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -17,6 +18,7 @@ public class Marca  extends EntityModel {
 
     @Id
     private String id;
+    @Column(unique = true, nullable = false)
     private String name;
 
     @JsonManagedReference

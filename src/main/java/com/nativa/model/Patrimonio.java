@@ -11,9 +11,10 @@ public class Patrimonio  extends EntityModel {
 
     @Id
     private  String id;
+    @Column(nullable = false)
     private String name;
     private String description;
-    @Column(name = "ntombo")
+    @Column(name = "ntombo", updatable = false)
     private Integer nTombo;
 
     @JsonBackReference
