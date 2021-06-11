@@ -19,6 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.List;
 import java.util.Objects;
 
 @RestController
@@ -30,10 +31,11 @@ public class ResourceUsuario {
     @GetMapping
     public ResponseEntity<?> index(@RequestParam(required = false) String email, @RequestParam(required = false) String name,   Pageable paginacao){
        if( Objects.isNull(email) &&  Objects.isNull(name)){
-           Page<Usuario> usuarioPage  = service.index( paginacao);
-           return ResponseEntity.ok(UsuarioDTO.converter(usuarioPage));
+           return ResponseEntity.ok(service.index(paginacao));
+       }else if(!Objects.isNull(email)){
+           return ResponseEntity.ok(service.findByEmail(email));
        }else{
-           return ResponseEntity.ok("você colocou nome ou email");
+           return ResponseEntity.ok(service.findByName(name));
        }
 
     }
@@ -44,7 +46,6 @@ public class ResourceUsuario {
         Usuario usuario = service.createUser(cadastroDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(usuario.getId()).toUri();
         try {
-
             Authentication authentication = authManager.authenticate(dadosLogin);
             String token = tokenService.gerarToken(authentication);
             return ResponseEntity.created(uri).body(new TokenDto(token, "Bearer"));
