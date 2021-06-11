@@ -1,6 +1,6 @@
 package com.nativa.model;
 
-import com.nativa.dto.in.UserDTO;
+import com.nativa.dto.in.CadastroDTO;
 import com.nativa.utils.Generate;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,12 +22,12 @@ public class Usuario extends EntityModel implements UserDetails {
     public Usuario() {
     }
 
-    public Usuario(UserDTO userDTO) {
+    public Usuario(CadastroDTO cadastroDTO) {
         super();
         this.id = Generate.uuid();
-        this.email = userDTO.getEmail();
-        this.name = userDTO.getName();
-        this.password = Generate.hashPassword(userDTO.getPassword());
+        this.email = cadastroDTO.getEmail();
+        this.name = cadastroDTO.getName();
+        this.password = Generate.hashPassword(cadastroDTO.getPassword());
     }
 
     @Override

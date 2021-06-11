@@ -7,7 +7,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-public class UserDTO {
+public class CadastroDTO {
 
     @NotNull(message = "escolha um nome")
     @NotBlank(message = "Nome não pode ficar em branco")
@@ -19,7 +19,7 @@ public class UserDTO {
     @Length(min = 8 , max = 20, message = "a senha deve no minimo 8 e no maximo 20")
     String password;
 
-    public UserDTO() {
+    public CadastroDTO() {
     }
 
     public String getName() {

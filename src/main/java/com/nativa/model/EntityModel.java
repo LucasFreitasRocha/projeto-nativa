@@ -1,9 +1,10 @@
 package com.nativa.model;
 
 import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
 @MappedSuperclass
-public abstract class EntityModel {
+public abstract class EntityModel implements Serializable {
 
     public abstract void setId(String id);
 
