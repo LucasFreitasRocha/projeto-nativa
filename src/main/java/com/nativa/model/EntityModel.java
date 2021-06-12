@@ -1,12 +1,18 @@
 package com.nativa.model;
 
-import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
+
+import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public abstract class EntityModel implements Serializable {
 
-    public abstract void setId(String id);
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public abstract void setId(String id);
 
     public abstract String getId();
 

@@ -1,15 +1,23 @@
 package com.nativa.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.nativa.dto.in.PatrimonioDTO;
 import com.nativa.utils.Generate;
 
-import javax.persistence.*;
-
 @Entity
 public class Patrimonio  extends EntityModel {
 
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     private  String id;
     @Column(nullable = false)
     private String name;

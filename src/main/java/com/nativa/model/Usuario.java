@@ -1,20 +1,26 @@
 package com.nativa.model;
 
-import com.nativa.dto.in.CadastroDTO;
-import com.nativa.utils.Generate;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.Collection;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.nativa.dto.in.CadastroDTO;
+import com.nativa.utils.Generate;
 
 @Entity
 public class Usuario extends EntityModel implements UserDetails {
 
 
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     private String id;
     @Column(unique = true, nullable = false)
     private String email;

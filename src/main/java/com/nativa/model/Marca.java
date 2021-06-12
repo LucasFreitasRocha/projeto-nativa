@@ -1,22 +1,28 @@
 package com.nativa.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.nativa.dto.in.MarcaDTO;
-import com.nativa.utils.Generate;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import java.util.ArrayList;
-import java.util.List;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.nativa.dto.in.MarcaDTO;
+import com.nativa.utils.Generate;
 
 @Entity
 public class Marca  extends EntityModel {
 
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     private String id;
     @Column(unique = true, nullable = false)
     private String name;
