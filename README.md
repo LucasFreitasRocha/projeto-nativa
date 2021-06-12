@@ -5,7 +5,7 @@
    http://localhost:8080/
    
 ## Testar as rotas 
-   utilizei o insominia(pode utilizar o postman também) ou swagger
+   utilizei o [insominia](https://github.com/LucasFreitasRocha/projeto-nativa/blob/master/Insomnia_nativa.json) (pode utilizar o postman também) ou swagger
    
 ## Banco de dados
    foi feito com postgres e o script DDL para criação do banco de dados está no src/main/resources/data.sql ou clique [aqui](https://github.com/LucasFreitasRocha/projeto-nativa/blob/master/src/main/resources/data.sql)
@@ -49,6 +49,7 @@
    a orm JPA hibernate.
    Os request e response da api eu utilizei o padrão DTO para fazer a comunicação e nesses dtos estou utilizando @valid para validar dados como email que eu criei um validador
    propio.
+   senha no model user:  senha tem que ser de 8 a 20
    Id do models: utilizei o uudi para mais segurança e gerado em um metodo que está na classe generate que também é responsavel de encripitar a senha antes de salvar um usuario no banco, a classe generete esta no package utils
       ![alt text](https://github.com/LucasFreitasRocha/projeto-nativa/blob/master/img/estrutura.png)
 
@@ -100,13 +101,13 @@
          {
             "email": "string",
             "name": "string",
-            "password": "string"
+            "password": "string" - senha tem que ser de 8 a 20
          }
    - deleteUser - metodo: delete - path:  /user/{id} - header: token
    - alterarSenha - metodo: patch - path: /user/alterar-senha - header: token - body:
 
          {
-            "password": "string"
+            "password": "string" - senha tem que ser de 8 a 20
          }
        Panho o id do usuario através do token
  - MarcaResource
