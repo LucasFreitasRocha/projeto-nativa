@@ -41,6 +41,10 @@
 ## estrutura
    A estrutura é composta do Controller(resource) -> Service -> que acessa o model, faz as logicas devidas e chama o -> repository que save no banco de dados utilizando o 
    a orm JPA hibernate.
+   Os request e response da api eu utilizei o padrão DTO para fazer a comunição e nesses dtos estou utilizando @valid para validar dados como email que eu criei um validador
+   propio.
+   Id do models: utilizei o uudi para mais segurança e gerado em um metodo que está na classe generate que também é responsavel de encripitar a senha antes de salvar um usuario no banco, a classe generete esta no package utils
+   
 
 ## Autorização
    A maioria das rotas são protegidas e para acessar é necessario adicionar um token no header "Bearer token" pois a api não está guardando estado(sessão)
