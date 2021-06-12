@@ -36,7 +36,7 @@ public class Usuario extends EntityModel implements UserDetails {
         super();
         this.id = Generate.uuid();
         this.email = cadastroDTO.getEmail();
-        this.name = cadastroDTO.getName();
+        this.name = cadastroDTO.getName().toLowerCase();
         this.password = Generate.hashPassword(cadastroDTO.getPassword());
     }
     public void update(CadastroDTO cadastroDTO) {

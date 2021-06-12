@@ -38,7 +38,7 @@ public class Marca  extends EntityModel {
     public Marca(MarcaDTO marcaDTO) {
         super();
         this.id = Generate.uuid();
-        this.name = marcaDTO.getName();
+        this.name = marcaDTO.getName().toLowerCase();
     }
 
     public List<Patrimonio> getPatrimonios() {

@@ -38,7 +38,7 @@ public class MarcaService {
     }
 
     public List<Marca> findByName(String name) {
-        return marcaRepository.findByNameContaining(name);
+        return marcaRepository.findByNameContaining(name.toLowerCase());
     }
 
     public Marca show(String id) {
@@ -50,7 +50,7 @@ public class MarcaService {
     public void update(String id, MarcaDTO marcaDTO) {
         verificaNome(marcaDTO.getName());
         Marca marca =  show(id);
-        marca.setName(marcaDTO.getName());
+        marca.setName(marcaDTO.getName().toLowerCase());
         marcaRepository.save(marca);
 
     }

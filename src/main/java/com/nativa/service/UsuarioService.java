@@ -41,7 +41,7 @@ public class UsuarioService {
     }
 
     public List<UsuarioDTO> findByName(String name) {
-        List<Usuario> users = usuarioRepository.findByNameContaining(name);
+        List<Usuario> users = usuarioRepository.findByNameContaining(name.toLowerCase());
         return UsuarioDTO.converter(users);
     }
 

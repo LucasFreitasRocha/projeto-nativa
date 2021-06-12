@@ -36,7 +36,7 @@ public class Patrimonio  extends EntityModel {
     public Patrimonio(PatrimonioDTO patrimonioDTO) {
         super();
         this.id = Generate.uuid();
-        this.name = patrimonioDTO.getName();
+        this.name = patrimonioDTO.getName().toLowerCase();
         this.description = patrimonioDTO.getDescription();
 
     }
