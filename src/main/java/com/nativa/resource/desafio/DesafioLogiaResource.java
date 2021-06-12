@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.nativa.service.desafio.DesafioLogicaService;
 
 @RestController
-@RequestMapping("/desafio-logica")
+@RequestMapping("/desafio-logico")
 public class DesafioLogiaResource {
 
     @Autowired private DesafioLogicaService service;
