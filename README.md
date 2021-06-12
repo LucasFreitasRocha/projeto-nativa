@@ -4,6 +4,10 @@
    Para rodar a aplicação é só escolher a ide (intellij, sts , eclipse e etc), o spring boot já tem o servidor tomcat embutido e por padrão o servidor é levantado na porta 8080
    http://localhost:8080/
    
+## Banco de dados
+   foi feito com postgres e o script DDL para criação do banco de dados está no src/main/resources/data.sql ou clique    
+   <a href="https://github.com/LucasFreitasRocha/projeto-nativa/blob/master/src/main/resources/data.sql_" target="_blank">aqui</a>
+   
 ## Swagger
 
    para facilitar a interação com a api foi incluido o swagger na aplicação. O Swagger é uma linguagem de descrição de interface para descrever APIs RESTful expressas usando JSON.
@@ -44,7 +48,8 @@
    Os request e response da api eu utilizei o padrão DTO para fazer a comunição e nesses dtos estou utilizando @valid para validar dados como email que eu criei um validador
    propio.
    Id do models: utilizei o uudi para mais segurança e gerado em um metodo que está na classe generate que também é responsavel de encripitar a senha antes de salvar um usuario no banco, a classe generete esta no package utils
-   
+      ![alt text](https://github.com/LucasFreitasRocha/projeto-nativa/blob/master/img/estrutura.png)
+
 
 ## Autorização
    A maioria das rotas são protegidas e para acessar é necessario adicionar um token no header "Bearer token" pois a api não está guardando estado(sessão)
