@@ -4,6 +4,9 @@
    Para rodar a aplicação é só escolher a ide (intellij, sts , eclipse e etc), o spring boot já tem o servidor tomcat embutido e por padrão o servidor é levantado na porta 8080
    http://localhost:8080/
    
+## Testar as rotas 
+   utilizei o insominia(pode utilizar o postman também) ou swagger
+   
 ## Banco de dados
    foi feito com postgres e o script DDL para criação do banco de dados está no src/main/resources/data.sql ou clique [aqui](https://github.com/LucasFreitasRocha/projeto-nativa/blob/master/src/main/resources/data.sql)
    
