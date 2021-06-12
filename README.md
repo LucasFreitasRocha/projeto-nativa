@@ -29,7 +29,7 @@
     no antMatchers como está na foto,  (ex: http.authorizeRequests().antMatchers(HttpMethod.POST, "/user").permitAll())
     
    Para os outras rotas é necessario o token como foi explicado anteriomente, e para validar o token foi criado middleware(filter) -  AutenticacaoViaTokenFilter:
-   ![alt text](https://github.com/LucasFreitasRocha/projeto-nativa/blob/master/img/rotasprotegidas.png)
+   ![alt text](https://github.com/LucasFreitasRocha/projeto-nativa/blob/master/img/middleware.png)
 
 
 ## Autenticação
