@@ -9,7 +9,12 @@
    
 ## Banco de dados
    foi feito com postgres e o script DDL para criação do banco de dados está no src/main/resources/data.sql ou clique [aqui](https://github.com/LucasFreitasRocha/projeto-nativa/blob/master/src/main/resources/data.sql)
+   credenciais para o acesso ao banco está no src/main/resources/application.proprities ou clique [aqui](https://github.com/LucasFreitasRocha/projeto-nativa/blob/master/src/main/resources/application.properties)
    
+            spring.jpa.hibernate.ddl-auto=update
+            spring.datasource.url=jdbc:postgresql://localhost:5432/nativa
+            spring.datasource.username=root
+            spring.datasource.password=root   
 ## Swagger
 
    para facilitar a interação com a api foi incluído  o swagger na aplicação. O Swagger é uma linguagem de descrição de interface para descrever APIs RESTful expressas usando JSON.
