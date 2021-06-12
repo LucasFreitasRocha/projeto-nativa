@@ -6,7 +6,7 @@
    
 ## Banco de dados
    foi feito com postgres e o script DDL para criação do banco de dados está no src/main/resources/data.sql ou clique    
-   <a href="https://github.com/LucasFreitasRocha/projeto-nativa/blob/master/src/main/resources/data.sql_" target="_blank">aqui</a>
+   <a href="https://github.com/LucasFreitasRocha/projeto-nativa/blob/master/src/main/resources/data.sql" target="_blank">aqui</a>
    
 ## Swagger
 
