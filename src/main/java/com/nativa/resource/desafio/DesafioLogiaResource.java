@@ -19,6 +19,7 @@ public class DesafioLogiaResource {
 
     @GetMapping
     public ResponseEntity<?> retornarMaiorDaFamiliaN( @RequestParam BigInteger numero){
+        System.out.println(numero.intValue());
         return ResponseEntity.ok(service.retornarMaiorDaFamiliaN(numero.intValue()));
     }
 }
