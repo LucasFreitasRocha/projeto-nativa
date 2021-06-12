@@ -24,6 +24,12 @@
    - metodo post /user:  que é a rota de criação de usuario
    - metodo post /auth: para se autenticar
    - metodo get /desafio-logico é a rota que é feito o desafio logico
+   
+   para configurar rota livre como o modulo é só utilizar o metodo permitALL passando o a rota e o metodo
+    no antMatchers como está na foto,  (ex: http.authorizeRequests().antMatchers(HttpMethod.POST, "/user").permitAll())
+    
+   Para os outras rotas é necessario o token como foi explicado anteriomente, e para validar o token foi criado middleware(filter) -  AutenticacaoViaTokenFilter:
+   ![alt text](https://github.com/LucasFreitasRocha/projeto-nativa/blob/master/img/rotasprotegidas.png)
 
 
 ## Autenticação
