@@ -49,6 +49,9 @@
 
 # API
 
+## Teste
+   Os teste se encontram em /src/teste/java/com/nativa/ ou clique [aqui](https://github.com/LucasFreitasRocha/projeto-nativa/tree/master/src/test/java/com/nativa)
+
 ## estrutura
    A estrutura é composta do Controller(resource) -> Service -> que acessa o model, faz as logicas devidas e chama o -> repository que sava no banco de dados utilizando o 
    a orm JPA hibernate.
