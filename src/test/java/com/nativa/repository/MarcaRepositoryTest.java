@@ -57,8 +57,7 @@ public class MarcaRepositoryTest {
 	public void deveriaVimVazioPassandoUmNomeQueNaoexisteNoMetedoFindByName(){
 	  	String teste ="nao tem essa marca";
 	  	Optional<Marca> marcaTeste = repo.findByName(teste);
-	  	Assert.assertNull(marcaTeste.isPresent());
-
+			Assert.assertTrue(!marcaTeste.isPresent());
 	}
 	@Test
 	public void deveriaVimVazioPassandoUmNomeQueNaoexisteNoMetedoFindByNameContaining(){
